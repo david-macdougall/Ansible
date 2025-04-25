@@ -6,10 +6,12 @@
   connection: localhost
   become: true
 
-  tasks:
-    - name: Install htop
+  pre_tasks:
+    - name: Update repository cache
       ansible.builtin.apt:
-        name:
-          - htop
-          - mc
-          - tmux
+        update_cache: true
+      changed_when: false
+
+  tasks:
+    - name: Include task file
+      ansible.builtin.include_tasks: tasks/packages.yml
