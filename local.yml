@@ -9,4 +9,7 @@
   tasks:
     - name: Install htop
       ansible.builtin.apt:
-        name: htop
+        name:
+          - htop
+          - mc
+          - tmux
