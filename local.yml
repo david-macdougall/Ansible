@@ -1,0 +1,12 @@
+---
+# This playbook is used by ansible-pull to configure locally.
+
+- name: Set context
+  hosts: localhost
+  connection: localhost
+  become: true
+
+  tasks:
+    - name: Install htop
+      ansible.builtin.apt:
+        name: htop
