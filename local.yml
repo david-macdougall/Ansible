@@ -14,4 +14,4 @@
 
   tasks:
     - name: Include task file
-      ansible.builtin.include_tasks: tasks/packages.yml
+      ansible.builtin.include_tasks: roles/tasks/packages.yml
